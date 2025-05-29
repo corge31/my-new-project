@@ -1,0 +1,47 @@
+spring:
+  application:
+    name: webapp
+
+  # データベース設定（開発環境：H2）
+  datasource:
+    url: jdbc:h2:mem:testdb
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+
+  # H2コンソール有効化
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+
+  # JPA設定
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+
+  # Thymeleaf設定
+  thymeleaf:
+    cache: false
+    encoding: UTF-8
+
+  # DevTools設定
+  devtools:
+    restart:
+      enabled: true
+    livereload:
+      enabled: true
+
+# サーバー設定
+server:
+  port: 8080
+
+# ログレベル設定
+logging:
+  level:
+    com.example.webapp: DEBUG
+    org.springframework.web: DEBUG
